@@ -38,6 +38,8 @@ const CommentSection = () => {
   const handleSaveEdit =()=>{
     // 수정된 댓글 저장
     if(editText.trim()){ // 텍스트가 비어있지 않으면
+      const updatedComments = [...comments]; // 댓글 배열 복사
+      updatedComments[editIndex].text = editText; // 수정 반영
       setComments((prevComments)=>{
         const updatedComments = [...prevComments];
         updatedComments[editIndex].text = editText;
@@ -85,14 +87,13 @@ const CommentSection = () => {
           )}
         </div>
         <div>
-          <button className='likeBtn' onClick={()=>handleLikeComment(index)}>👍🏻</button>
-          <span>{comment.likes}</span>
-        </div>
-        <div>
           <span className="editBtn" onClick={()=>handleEditComment(index)}>수정</span>
           <span className="deleteBtn" onClick={()=>handleDeleteComment(index)}>삭제</span>
         </div>
-
+        <div>
+          <button className='likeBtn' onClick={handleLikeComment}>👍🏻</button>
+          <span>{comment.likes}</span>
+        </div>
       </li>
         ))}
       </ul>
@@ -102,7 +103,7 @@ const CommentSection = () => {
         placeholder="내용을 입력하세요."
         value={newComment}
         onChange={(e)=>setNewComment(e.target.value)}/>
-        <button className='commentAddBtn' onClick={handdleAddComment}>추가</button>
+        <button className='commentAddBtn' oonClick={() => handleLikeComment(index)}>추가</button>
       </div>
     </div>
       )}

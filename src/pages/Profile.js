@@ -8,12 +8,12 @@ const Profile = () => {
         <div className="profileHeader">
           <div className="profilePic">
             <img
-              src="https://cdn.pixabay.com/photo/2020/05/17/20/21/cat-5183427_1280.jpg"
+              src="https://img.khan.co.kr/news/2010/02/01/3-2.jpg"
               alt="둘리"
             />
           </div>
           <div className="profileInfo">
-            <h2 className="profileName">프로필 편집</h2>
+            <h2 className="profileName">둘리</h2>
             <p className="profileUsername">@dooly_the_dinosaur</p>
             <p className="profileEmail">dooly@comicworld.com</p>
           </div>
@@ -28,7 +28,7 @@ const Profile = () => {
         </div>
 
         <div className="profileActions">
-          <button className="editProfileBtn">둘리 소개 편집</button>
+          <button className="editProfileBtn">프로필 편집</button>
           <button className="logoutBtn">로그아웃</button>
         </div>
       </div>
